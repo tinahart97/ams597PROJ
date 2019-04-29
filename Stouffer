@@ -1,0 +1,22 @@
+#' Stouffers Test Meta Analysis
+#'
+#'This function uses the Fisher test to pool pvalues
+#' @param input is a list of p values
+
+#' @return A list containing the following components
+#' @return \code{statistic} the value of the corrected Z-test statistic.
+#' @return \code{p.value} the p-value for the test.
+#'
+#' @examples
+#' set.seed(123)
+#' p <- 100
+#' data1 <- data.frame(group=sample(1:3,200,replace=TRUE),matrix(rnorm(p*200),ncol=p))
+#' data2 <- data.frame(group=sample(1:2,150,replace=TRUE),matrix(rnorm(p*150),ncol=p))
+#' data3 <- data.frame(group=sample(1:2,220,replace=TRUE),matrix(rnorm(p*220),ncol=p))
+
+pool.stouffer <- function(pvalues){
+  k <- length(pvalues)
+  TS <- sum(qnorm(pvalues)) / sqrt(k)
+  p.value <- pnorm(TS, lower.tail=F)
+  return(list(pvalues=pvalue, StoufferTest=pool.Stouffer(pvalue)))
+}
