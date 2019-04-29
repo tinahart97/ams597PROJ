@@ -5,10 +5,10 @@ library(roxygen2)
 
 #' Pooled test
 #'
-#' @param x a (non-empty) numeric vector of data values. For tumor data.
-#' @param y a(non-empty) numeric vector of data values. For normal data
-#' @param alternative a character string specifying the alternative hypothesis, must be one of "two.sided" (default), "greater" or"less". You can specify just the initial letter.
-#' @param mu a number indicating the true value of the mean (or difference in means if you are performing a two sample test).
+#' @param data1, data2, data3, data4, data5 are all data.frames
+#' @param Each data frame consists of identical number of columns
+#' @param Each data frame will have n number of rows, n can be different for different data frames
+#' @param 
 #'
 #' @return A list containing the following components
 #' @return \code{statistic} the value of the corrected Z-test statistic.
