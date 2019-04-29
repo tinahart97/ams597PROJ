@@ -1,10 +1,11 @@
 #' Min Test Meta Analysis
 #'
-#'This function uses the Min test to pool pvalues
-#' @param input is a list of p values
+#'
+#'It follows a beta distribution with degrees of freedom α = 1 and β = k under the null hypothesis
 
-#' @return  
-#' @return
+#' @param input is a list of p-values
+
+#' @return the minimum p-value among the K studies as the test statistic 
 #'
 #' @examples
 #' set.seed(123)
