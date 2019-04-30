@@ -23,9 +23,12 @@ pool.min.p.value <- function(pvalues){
 }
 
   pool.min<- function(pvalue){
-    k<- length(pvalue)
-    TS <- pi[k]
-    pvalue <-pbeta(pr, k,1)
+    keep <- (pvalue >= 0) & (pvalue <= 1)
+    pkeep <- pvalue[keep]
+    k <- length(pi)
+    pkeep <- sort(pkeep)
+    TS <- pkeep[k]
+    pvalue <-pbeta(pr, 1,k)
     return(pvalue)
     
   }
