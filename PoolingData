@@ -54,7 +54,7 @@ check.input(frames)
 GroupDifference <- function(x){
   p = length(x)
   n = length(x[,1])
-  groups = nrow(data1[1])
+  groups = groups = nrow(unique(x[1]))
   p_values = rep(NA,p-1)
   #ANOVA Code
   if(groups>2){  
