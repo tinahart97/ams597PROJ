@@ -24,7 +24,7 @@ pool.min.p.value <- function(pvalues){
 
   pool.min<- function(pvalue){
     k<- length(pvalue)
-    pr <- pi[k]
+    TS <- pi[k]
     pvalue <-pbeta(pr, k,1)
     return(pvalue)
     
