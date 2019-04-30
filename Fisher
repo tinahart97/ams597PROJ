@@ -4,7 +4,7 @@ devtools::install_github("klutometis/roxygen")
 library(roxygen2)
 
 setwd("parent_directory")
-create("cats")
+create("PoolMeta")
 
 #' Fisher Test Meta Analysis
 #'
@@ -31,9 +31,9 @@ pool.fisher <- function(pvalues){
   return((list(pvalues=pvalue,FisherTest=pool.fisher(pvalue))))
 }
 
-setwd("./cats")
+setwd("./PoolMeta")
 document()
 
 setwd("..")
-install("cats")
+install("PoolMeta")
 
