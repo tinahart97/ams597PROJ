@@ -21,3 +21,13 @@ pool.min.p.value <- function(pvalues){
   p.value <- pbeta(TS, shape1=1, shape2=k, lower.tail=F)
   return(list(pvalues=pvalue, MinimumPooling= pool.min.p.value(pvalue)))
 }
+
+pool.max<- function(pvalue){
+    keep <- (pvalue >= 0) & (pvalue <= 1)
+    pi <- pvalue[keep]
+    k <- length(pi)
+    pi <- sort(pi)
+    pr <- pi[k]
+    pvalue <-pbeta(pr, k,1)
+    return(pvalue)
+  }
