@@ -4,7 +4,7 @@ devtools::install_github("klutometis/roxygen")
 library(roxygen2)
 
 setwd("parent_directory")
-create("cats")
+create("PoolMeta")
 
 #' Pooling Data
 #'
