@@ -51,20 +51,20 @@ frames <- list(data1, data2)
 check.input(frames)
 
 
-GroupDifference <- function(x){
+GroupDifference = function(x){
   p = length(x)
   n = length(x[,1])
-  groups = groups = nrow(unique(x[1]))
+  groups = nrow(unique(x[1]))
   p_values = rep(NA,p-1)
   #ANOVA Code
   if(groups>2){  
     #test normality
-    for(i in 2:p-1){
+    for(i in 2:p){
       y = data.frame(group = x[,1], biomarker = x[,i])
       normal = TRUE
       for(j in 1:groups){
         y_j = y[which(y$group==j),][,2]
-        pvalue = shapiro.test(y_j)[3]$p.value
+        pvalue = shapiro.test(y_j)[[2]]
         if(pvalue<=.05){
           normal=FALSE
           break
@@ -81,9 +81,9 @@ GroupDifference <- function(x){
       else{
         pvalue = kruskal.test(y$group~y$biomarker)[3]$p.value
       }
-      pvalues[i-1] = pvalue
+      p_values[i-1] = pvalue
     }
-    return(pvalues)
+    return(p_values)
   }
   #Two Samp T Test Code
   else{
@@ -117,3 +117,4 @@ GroupDifference <- function(x){
   }
   return(p_values)
 }
+
