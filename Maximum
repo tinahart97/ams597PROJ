@@ -21,3 +21,14 @@ pool.max.p.value <- function(pvalues){
   p.value <- pbeta(TS, shape1=k, shape2=1, lower.tail=F)
   return(list(pvalues=pvalue, MaximumPooling= pool.max.p.value(pvalue)))
 }
+
+
+  pool.max<- function(pvalue){
+    keep <- (pvalue >= 0) & (pvalue <= 1)
+    pkeep <- pvalue[keep]
+    k <- length(pi)
+    pkeep <- sort(pkeep)
+    TS <- pkeep[k]
+    pvalue <-pbeta(TS, k,1)
+    return(pvalue)
+  }
