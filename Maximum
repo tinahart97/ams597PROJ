@@ -8,11 +8,8 @@
 #' @return the maximum p-value as the test statistic
 #'
 #' @examples
-#' set.seed(123)
-#' p <- 100
-#' data1 <- data.frame(group=sample(1:3,200,replace=TRUE),matrix(rnorm(p*200),ncol=p))
-#' data2 <- data.frame(group=sample(1:2,150,replace=TRUE),matrix(rnorm(p*150),ncol=p))
-#' data3 <- data.frame(group=sample(1:2,220,replace=TRUE),matrix(rnorm(p*220),ncol=p))
+#' pvalues<- c(0.486667826,0.154255057, 0.858419083, 0.486667826 ,0.405013316, 0.316372249, 0.173853520, 0.284391656, 0.370577866, 0.421579844, 0.221750129, 0.962561630, 0.392123661, 0.127102942, 0.896587161, 0.665359191)
+#' pool.fisher(pvalues)
 
 
 pool.max <- function(pvalues){
