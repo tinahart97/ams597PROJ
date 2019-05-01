@@ -8,7 +8,7 @@ create("PoolMeta")
 
 #' Pooling Data
 #'
-#'This function uses different tests (Fisher, Stouffer, Min, Max) to pool data from different data frames
+#'This function uses different tests (Fisher, Stouffer, Min, Max) to pool data from different data frames. 
 #' @param x1, x2, x3, x4, x5 are data frames with each data frame consisting of identical number of columns. Must input at least 2 and at most 5 data frames. 
 #' @param test indicates which pooling test to use, must be either fisher, stouffer, min, max
 
