@@ -12,7 +12,6 @@ create("PoolMeta")
 #' @param x1, x2, x3, x4, x5 are data frames with each data frame consisting of identical number of columns. Must input at least 2 and at most 5 data frames. 
 #' @param test indicates which pooling test to use, must be either fisher, stouffer, min, max
 
-
 #' @return A list containing the following components
 #' @return \code{p.value} the p-value for the pooled test
 #'
