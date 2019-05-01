@@ -5,7 +5,7 @@ library(roxygen2)
 
 #' Pooled test
 #'
-#' @param data1, data2, data3, data4, data5 are all data.frames
+#' @param x is a data frame, can be normally distributed or not normally distributed. Can have between 2 and 5 groups, for 2 groups we will perform a two sample t-test or Wilcoxon rank sum test. For more than 2 groups we will perform ANOVA or Kruskal Wallis test.  
 #' @param Each data frame consists of identical number of columns
 #' @param Each data frame will have n number of rows, n can be different for different data frames
 #' @param 
@@ -18,8 +18,7 @@ library(roxygen2)
 #' set.seed(123)
 #' p <- 100
 #' data1 <- data.frame(group=sample(1:3,200,replace=TRUE),matrix(rnorm(p*200),ncol=p))
-#' data2 <- data.frame(group=sample(1:2,150,replace=TRUE),matrix(rnorm(p*150),ncol=p))
-#' data3 <- data.frame(group=sample(1:2,220,replace=TRUE),matrix(rnorm(p*220),ncol=p))
+#' GroupDifference(data1)
 
 
 
