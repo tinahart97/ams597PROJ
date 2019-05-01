@@ -28,7 +28,7 @@ pool.fisher <- function(pvalues){
   df <- 2*k
   TS <- -2*sum(log(pvalues))
   p.value <- pchisq(TS, df=df,lower.tail=F)
-  return((list(pvalues=pvalue,FisherTest=pool.fisher(pvalue))))
+  return(p.value)
 }
 
 setwd("./PoolMeta")
