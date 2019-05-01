@@ -15,7 +15,7 @@
 #' data2 <- data.frame(group=sample(1:2,150,replace=TRUE),matrix(rnorm(p*150),ncol=p))
 #' data3 <- data.frame(group=sample(1:2,220,replace=TRUE),matrix(rnorm(p*220),ncol=p))
 
-pool.stouffer <- function(pvalues){
+pool.stoeffer <- function(pvalues){
   k <- length(pvalues)
   TS <- sum(qnorm(pvalues)) / sqrt(k)
   p.value <- pnorm(TS, lower.tail=F)
