@@ -12,7 +12,7 @@ create("PoolMeta")
 #'It sums up the log-transformed p-values obtained from individual studies
 #'It follows a χ2 distribution with 2 k degrees of freedom under the null hypothesis
 #'
-#' @param input is a list of p-values
+#' @param pvalues is a list of pvalues
 #'
 #' @return the Fisher pooled p-value as the test statistic
 #'
