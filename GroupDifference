@@ -51,6 +51,7 @@ frames <- list(data1, data2)
 check.input(frames)
 
 
+
 GroupDifference = function(x){
   p = length(x)
   n = length(x[,1])
@@ -117,4 +118,5 @@ GroupDifference = function(x){
   }
   return(p_values)
 }
+
 
