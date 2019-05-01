@@ -15,11 +15,11 @@
 #' data3 <- data.frame(group=sample(1:2,220,replace=TRUE),matrix(rnorm(p*220),ncol=p))
 
 
-pool.max.p.value <- function(pvalues){
+pool.max <- function(pvalues){
   k <- length(pvalues)
   TS <- max(pvalues)
   p.value <- pbeta(TS, shape1=k, shape2=1, lower.tail=F)
-  return(list(pvalues=pvalue, MaximumPooling= pool.max.p.value(pvalue)))
+  return(p.value)
 }
 
 
