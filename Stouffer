@@ -1,3 +1,6 @@
+library(roxygen2)
+library(devtools)
+
 #'Stouffer Test Meta Analysis
 #'
 #'This function uses the Stouffer test to pool pvalues
