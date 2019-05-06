@@ -1,0 +1,26 @@
+check.input <- function(frames){
+  # frames: list
+  n_cols <- ncol(frames[[1]])
+  col_labels <- colnames(frames[[1]])
+  
+  for (f in frames){
+    # Check that a list of data frames are being entered.
+    if (typeof(f) != "list"){
+      stop("list contains elements not of type list")
+    }
+    
+    # Check that number of columns are the same.
+    n_c <- ncol(f)
+    if (n_c != n_cols){
+      stop("not all data frames have the same number of columns")
+    }
+    
+    # Check that all column names are the same.
+    if (any(colnames(f) != col_labels)){
+      stop("there exists a column with an incorrect label")
+    }
+  }
+}
+
+frames <- list(data1, data2)
+check.input(frames)
