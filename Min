@@ -1,7 +1,10 @@
+library(roxygen2)
+library(devtools)
+
 #' Min Test Meta Analysis
 #'
 #'
-#'It follows a beta distribution with degrees of freedom α = 1 and β = k under the null hypothesis
+#'It follows a beta distribution with degrees of freedom ??=1 and ??=k under the null hypothesis
 
 #' @param input is a list of p-values
 
@@ -9,7 +12,7 @@
 #'
 #' @examples
 #' pvalues<- c(0.486667826,0.154255057, 0.858419083, 0.486667826 ,0.405013316, 0.316372249, 0.173853520, 0.284391656, 0.370577866, 0.421579844, 0.221750129, 0.962561630, 0.392123661, 0.127102942, 0.896587161, 0.665359191)
-#' pool.fisher(pvalues)
+#' pool.min(pvalues)
 
 
 pool.min <- function(pvalues){
@@ -18,15 +21,3 @@ pool.min <- function(pvalues){
   p.value <- pbeta(TS, shape1=1, shape2=k, lower.tail=F)
   return(p.value)
 }
-
-  pool.min<- function(pvalue){
-    keep <- (pvalue >= 0) & (pvalue <= 1)
-    pkeep <- pvalue[keep]
-    k <- length(pi)
-    pkeep <- sort(pkeep)
-    TS <- pkeep[k]
-    pvalue <-pbeta(pr, 1,k)
-    return(pvalue)
-    
-  }
-  
