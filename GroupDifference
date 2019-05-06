@@ -1,54 +1,17 @@
-install.packages("devtools")
 library("devtools")
-devtools::install_github("klutometis/roxygen")
 library(roxygen2)
 
 #' Pooled test
 #'
 #' @param x is a data frame, can be normally distributed or not normally distributed. Can have between 2 and 5 groups, for 2 groups we will perform a two sample t-test or Wilcoxon rank sum test. For more than 2 groups we will perform ANOVA or Kruskal Wallis test.  
-#' @param Each data frame consists of identical number of columns
-#' @param Each data frame will have n number of rows, n can be different for different data frames
-#' @param 
 #'
-#' @return A list containing the following components
-#' @return \code{statistic} the value of the corrected Z-test statistic.
-#' @return \code{p.value} the p-value for the test.
+#' @return A list containing p values
 #'
 #' @examples
 #' set.seed(123)
 #' p <- 100
 #' data1 <- data.frame(group=sample(1:3,200,replace=TRUE),matrix(rnorm(p*200),ncol=p))
 #' GroupDifference(data1)
-
-
-
-check.input <- function(frames){
-  # frames: list
-  n_cols <- ncol(frames[1])
-  col_labels <- colnames(frames[1])
-  
-  for (f in frames){
-    # Check that a list of data frames are being entered.
-    if (typeof(f) != "list"){
-      stop("list contains elements not of type list")
-    }
-    
-    # Check that number of columns are the same.
-    n_c <- ncol(f)
-    if (n_c != n_cols){
-      stop("not all data frames have the same number of columns")
-    }
-    
-    # Check that all column names are the same.
-    if (any(colnames(f) != col_labels)){
-      stop("there exists a column with an incorrect label")
-    }
-  }
-}
-
-frames <- list(data1, data2)
-check.input(frames)
-
 
 
 GroupDifference = function(x){
