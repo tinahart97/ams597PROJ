@@ -37,23 +37,30 @@ Project = function(x1,x2,x3=NULL,x4=NULL,x5=NULL,test=c("fisher","stouffer","min
   P_x4 = NULL
   P_x5 = NULL
   
-
+  x = list()
   
   if (!is.null(x1)){
-    P_x1 = GroupDifference(x1) 
+    P_x1 = GroupDifference(x1)
+    x[[1]] = x1
   }
   if (!is.null(x2)){
     P_x2 = GroupDifference(x2)
+    x[[2]] = x2
   }
   if (!is.null(x3)){
     P_x3 = GroupDifference(x3)
+    x[[3]] = x3
   }
   if (!is.null(x4)){
     P_x4 = GroupDifference(x4)
+    x[[4]] = x4
   }
   if (!is.null(x5)){
     P_x5 = GroupDifference(x5)
+    x[[5]] = x5
   }
+  
+  check.input(x)
   
   data = rbind(P_x1,P_x2,P_x3,P_x4,P_x5)
   #or colbind bc we have no clue what you want
@@ -72,11 +79,5 @@ Project = function(x1,x2,x3=NULL,x4=NULL,x5=NULL,test=c("fisher","stouffer","min
   else if(test == "max"){
     x = sapply(data, pool.max)
   }
-  print(x)
-
-  
-  #Stouffer Statistic
-  
+  return(x)
 }
-
-
