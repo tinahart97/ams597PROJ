@@ -1,0 +1,82 @@
+---
+title: "MetaP"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{MetaP}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MetaP)
+```
+
+
+## Overall Projects
+This function takes between 2 and 5 Data Frames and calculates p-values for each Biomarker to perform one of the 4 pooling tests below on. 
+
+The possible pooling method arguments are:
+
+* "fisher" for Fisher
+
+* "stouffer" for Stouffer
+
+* "min" for Minimum P-value
+
+* "max" for Maximum P-value
+
+Usage: Project(x1, x2, x3, x4, x5, test)
+
+
+## Check input
+This function checks if the inputs are vaild to use in our main function
+Checks that:
+*All inputs are lists/ Data Frames
+*Same number of columns in each Data Frame
+*Rows 2 to p are biomarkers
+*Checks that the group membership column will take at least two unique values
+
+Usage: Check.input(frames)
+
+
+## GroupDifference
+This function takes a Data Frame that can be normally distributed or not normally distributed. For 2 groups we will perform a two sample t-test or Wilcoxon rank sum test based on Normality. For more than 2 groups we will perform ANOVA or Kruskal Wallis test based on Normality. 
+
+Usage: GroupDifference(x)
+
+The return is an output of pvalues for each biomarker 
+
+
+## Pool.Fisher
+This function sums the log-transformed p-values, following a chi-squared distributions with 2k degrees of freedom
+
+Usage: pool.fisher(x)
+
+The return is a vector of p-values, one for each biomarker
+
+## Pool.Stouffer
+This function sums the inverse normal p-values, following a standard normal distribution
+
+Usage: pool.stouffer(x)
+
+The return is a vector of p-values, one for each biomarker
+
+This function follows a beta distribution with degrees of freedom α=1 and β=k
+
+Usage: pool.min(x)
+
+The return is a vector of p-values, one for each biomarker
+
+## Pool.max
+This function follows a beta distribution with degrees of freedom α=k and β=1
+
+Usage: pool.max(x)
+
+The return is a vector of p-values, one for each biomarker

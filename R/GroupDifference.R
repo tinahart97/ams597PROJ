@@ -3,7 +3,7 @@ library(roxygen2)
 
 #' Pooled test
 #'
-#' @param x is a data frame, can be normally distributed or not normally distributed. Can have between 2 and 5 groups, for 2 groups we will perform a two sample t-test or Wilcoxon rank sum test. For more than 2 groups we will perform ANOVA or Kruskal Wallis test.  
+#' @param x is a data frame, can be normally distributed or not normally distributed. For 2 groups we will perform a two sample t-test or Wilcoxon rank sum test. For more than 2 groups we will perform ANOVA or Kruskal Wallis test.  
 #'
 #' @return A list containing p values
 #'
@@ -80,5 +80,3 @@ GroupDifference = function(x){
   }
   return(p_values)
 }
-
-

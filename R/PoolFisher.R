@@ -5,7 +5,7 @@ library(devtools)
 #'
 #'This function uses the Fisher test to pool pvalues
 #'It sums up the log-transformed p-values obtained from individual studies
-#'It follows a ??2 distribution with 2k degrees of freedom under the null hypothesis
+#'It follows a chisquare distribution with 2k degrees of freedom under the null hypothesis
 #'
 #' @param pvalues is a list of pvalues
 #'
@@ -23,4 +23,3 @@ pool.fisher <- function(pvalues){
   p.value <- pchisq(TS, df=df,lower.tail=F)
   return(p.value)
 }
-

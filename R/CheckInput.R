@@ -36,4 +36,13 @@ check.input <- function(frames){
       stop("there exists a column with an incorrect label")
     }
   }
+  for (i in 1:length(frames)){
+    if((length(unique(frames[[i]][,1]))<2)== TRUE){
+      stop("Groups are not unique in a Data Frame")
+    }
+  }
 }
+
+
+
+

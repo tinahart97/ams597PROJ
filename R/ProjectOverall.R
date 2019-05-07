@@ -18,21 +18,21 @@ library(roxygen2)
 
 
 Project = function(x1,x2,x3=NULL,x4=NULL,x5=NULL,test=c("fisher","stouffer","min","max")){
-
+  
   #check if enough data freames were entered
   if(is.null(x1) | is.null(x2)){
     stop("Not enough data frames entered")
   }
-
+  
   #get the p_value lists for each biomarker for each data frame
   P_x1 = NULL
   P_x2 = NULL
   P_x3 = NULL
   P_x4 = NULL
   P_x5 = NULL
-
+  
   x = list()
-
+  
   if (!is.null(x1)){
     P_x1 = GroupDifference(x1)
     x[[1]] = x1
@@ -53,13 +53,13 @@ Project = function(x1,x2,x3=NULL,x4=NULL,x5=NULL,test=c("fisher","stouffer","min
     P_x5 = GroupDifference(x5)
     x[[5]] = x5
   }
-
+  
   check.input(x)
-
+  
   data = rbind(P_x1,P_x2,P_x3,P_x4,P_x5)
   #or colbind bc we have no clue what you want
   data = data.frame(data)
-
+  
   #initiate the p values we want to find
   if(test == "fisher"){
     x = sapply(data, pool.fisher)
@@ -75,3 +75,5 @@ Project = function(x1,x2,x3=NULL,x4=NULL,x5=NULL,test=c("fisher","stouffer","min
   }
   return(x)
 }
+
+

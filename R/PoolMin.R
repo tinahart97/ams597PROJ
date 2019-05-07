@@ -4,7 +4,7 @@ library(devtools)
 #' Min Test Meta Analysis
 #'
 #'
-#'It follows a beta distribution with degrees of freedom ??=1 and ??=k under the null hypothesis
+#'It follows a beta distribution with degrees of freedom alpha=1 and beta=k under the null hypothesis
 
 #' @param input is a list of p-values
 

@@ -19,5 +19,6 @@ pool.stouffer <- function(pvalues){
   k <- length(pvalues)
   TS <- sum(qnorm(pvalues,lower.tail=F)) / sqrt(k)
   p.value <- pnorm(TS, lower.tail=F)
-  return(list(sumz= TS, p=p.value))
+  return(p.value)
 }
+

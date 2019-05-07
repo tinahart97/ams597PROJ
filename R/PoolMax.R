@@ -4,7 +4,7 @@ library(devtools)
 #' Max Test Meta Analysis
 #'
 #'This function uses the Maximum test to pool pvalues
-#'It follows a beta distribution with degrees of freedom ??=K and ??=1 under the null hypothesis.
+#'It follows a beta distribution with degrees of freedom alpha=K and beta=1 under the null hypothesis.
 
 #' @param input is a list of p-values
 

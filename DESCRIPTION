@@ -1,0 +1,16 @@
+Package: MetaP
+Type: Package
+Title: This package implements different methods of pooling statistical
+        evidence from multiple datasets.
+Version: 0.1.0
+Author: Matthew Brulhardt, Joshua Foote, Christina Hartnett, Natalie Murawski 
+Maintainer: Christina Hartnett <Christina.Hartnett@stonybrook.edu>
+Description: This package will take datasets of biomarkers and pool them using Fisher, Stouffer, Minimum or Maximum tests.
+License: CC0
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Suggests: knitr, rmarkdown, devtools
+VignetteBuilder: knitr
+NeedsCompilation: no
+Packaged: 2019-05-07 15:41:17 UTC; christinahartnett
